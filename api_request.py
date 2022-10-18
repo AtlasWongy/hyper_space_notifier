@@ -16,7 +16,7 @@ def post_request_hyper_space():
             }
         ],
         "by_mpa_types": [
-            "TRANSACTION"
+            "LISTING"
         ]
         },
         "pagination_info": {

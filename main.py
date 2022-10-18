@@ -20,9 +20,9 @@ response_in_json = json.loads(response.text)
 
 # Grab the inner JSON response
 entry = response_in_json["data"]["getProjectHistory"]["market_place_snapshots"]
+entry_size = len(entry)
 
-
-for i in range(0, 1, 1):
+for i in range(0, entry_size, 1):
 
   # Find out and check the time creation first
   time_creation_check = entry[i]["market_place_state"]["created_at"]
@@ -50,6 +50,9 @@ for i in range(0, 1, 1):
   local_time = local_time[:string_size_local_time - 6]
 
   print(f"The time the NFT is created converted to local time {local_time}")
+
+  # Current time must also be string
+  current_time = str(current_time)
 
   # Subtract the current time - local time 
   creation_date_time = datetime.strptime(local_time, '%Y-%m-%d %H:%M:%S')

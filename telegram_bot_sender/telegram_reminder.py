@@ -3,9 +3,9 @@ from nft_class import NFT
 import json
 
 TOKEN = "5784884141:AAEt2h6khFRKqNsxERYaowpVh2c28JC7-wM"
-yijie_chat_id = 127764571
-yew_wei_chat_id = 37823187
-test_message = "Testing testing"
+# yijie_chat_id = 127764571
+# yew_wei_chat_id = 37823187
+# test_message = "Testing testing"
 
 # url = f"https://api.telegram.org/bot{TOKEN}/getUpdates"
 # print(requests.get(url).json())
@@ -15,7 +15,7 @@ config_chat = open("./config.json")
 config_settings = json.load(config_chat)
 
 # Get the chat id
-chat_id = config_settings["yijie_chat_id"]
+chat_id = config_settings["chat_id"]
 
 def send_reminder(nft_information):
 
