@@ -22,7 +22,7 @@ response_in_json = json.loads(response.text)
 entry = response_in_json["data"]["getProjectHistory"]["market_place_snapshots"]
 entry_size = len(entry)
 
-for i in range(0, entry_size, 1):
+for i in range(0, 1, 1):
 
   # Find out and check the time creation first
   time_creation_check = entry[i]["market_place_state"]["created_at"]
@@ -61,11 +61,11 @@ for i in range(0, entry_size, 1):
   time_difference = current_time - creation_date_time
   print(time_difference)
 
-  if time_difference > five_minute:
-    print("It seems there are no new NFTs added..")
-    break
+  # if time_difference > five_minute:
+  #   print("It seems there are no new NFTs added..")
+  #   break
 
-  if time_difference < five_minute:
+  if time_difference > five_minute:
     # Create a new NFT object
     new_NFT = NFT({
       "name": "",
